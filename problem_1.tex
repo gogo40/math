@@ -137,15 +137,16 @@ Simplificando a eq. (\ref{solucao.eq.diferencial.expandida}):
 $$
 \begin{array}{lcl} 
  Y(z) = \\
- c_1z - \displaystyle \frac{c_1}{z-1}+ 2 c_1  \log(1-z)+ c_2-\\
- 4 Li_2(z)\left[\displaystyle \frac{z + 1}{z-1}\right]+\\
+ c_1z - \displaystyle \frac{c_1}{z-1}+ c_2-\\
+ 4 Li_2(z)\left[\displaystyle \frac{z - 1}{z-1}\right]+\\
  \displaystyle \frac{2 z^2 }{z-1}\displaystyle \left[\log(1-z) - \log(z)\right]+\\
  \displaystyle \frac{2 z}{z-1}-\\
  \displaystyle \frac{6}{z-1}+\\
  4 \log(1-z)\log(z) \left[\displaystyle \frac{ z  + 1}{z-1}\right]+\\
  2 \log^2(1-z) - \\
  4 \log(1-z) \left[\displaystyle \frac{ z }{z-1}\right]-\\
- 4 \log(z)\left[\displaystyle \frac{ z }{z-1}\right]
+ 4 \log(z)\left[\displaystyle \frac{ z }{z-1}\right] + \\
+ 2 c_1  \log(1-z)
 \end{array}
 $$
 
@@ -154,12 +155,12 @@ Reorganizando:
 \begin{equation}
 \begin{array}{lcl} 
  Y(z) = \\
- c_1z - \displaystyle \frac{c_1}{z-1}+ 2 c_1  \log(1-z)+ c_2-\\
- 4 Li_2(z)\left[\displaystyle \frac{z + 1}{z-1}\right]+\\
+ c_1z - \displaystyle \frac{c_1}{z-1}+  c_2-\\
+ 4 Li_2(z) +\\
  \displaystyle \frac{2 z^2 - 4z}{z-1}\displaystyle \left[\log(1-z) - \log(z)\right] -\\
  \displaystyle \frac{2 z - 6}{z-1}+\\
  4 \log(1-z)\log(z) \left[\displaystyle \frac{ z  + 1}{z-1}\right]+\\
- 2 \log^2(1-z)
+ 2 \log^2(1-z) + 2 c_1  \log(1-z)
 \end{array} 
 \label{solucao.eq.diferencial.simplificado}
 \end{equation}
@@ -173,15 +174,31 @@ $$
  x[n] = \\
  \mathcal{Z}^{-1}\left\{c_1z\right\} - 
  \mathcal{Z}^{-1}\left\{\displaystyle \frac{c_1}{z-1}\right\} + 
- \mathcal{Z}^{-1}\left\{2 c_1  \log(1-z)\right\} + 
  \mathcal{Z}^{-1}\left\{c_2\right\}-\\
- \mathcal{Z}^{-1}\left\{4 Li_2(z)\left[\displaystyle \frac{z + 1}{z-1}\right]\right\}+\\
+ \mathcal{Z}^{-1}\left\{4 Li_2(z)\right\}+\\
  \mathcal{Z}^{-1}\left\{\displaystyle \frac{2 z^2 - 4z}{z-1}\displaystyle \left[\log(1-z) - \log(z)\right]\right\} -\\
  \mathcal{Z}^{-1}\left\{\displaystyle \frac{2 z - 6}{z-1}\right\}+\\
  \mathcal{Z}^{-1}\left\{4 \log(1-z)\log(z) \left[\displaystyle \frac{ z  + 1}{z-1}\right]\right\}+\\
- \mathcal{Z}^{-1}\left\{2 \log^2(1-z)\right\}
+ \mathcal{Z}^{-1}\left\{2 \log^2(1-z)\right\} + \\
+ \mathcal{Z}^{-1}\left\{2 c_1  \log(1-z)\right\} 
 \end{array} 
 $$
 
+
+Simplificando:
+
+$$
+\begin{array}{lcl} 
+ x[n] = \\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{c_1 - c_1z^{-1} - c_1z^{-2}}{1-z^{-2}}\right\} + \\
+ c_2 \delta(n)-\\
+ \mathcal{Z}^{-1}\left\{4 Li_2(z)\right\}+\\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{2 z^2 - 4z}{z-1}\displaystyle \left[\log(1-z) - \log(z)\right]\right\} -\\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{2  - 6z ^{-1}}{1-z^{-1}}\right\}+\\
+ \mathcal{Z}^{-1}\left\{4 \log(1-z)\log(z) \left[\displaystyle \frac{ z  + 1}{z-1}\right]\right\}+\\
+ \mathcal{Z}^{-1}\left\{2 \log^2(1-z)\right\} + \\
+ \mathcal{Z}^{-1}\left\{2 c_1  \log(1-z)\right\} 
+\end{array} 
+$$
 
 \end{document}
