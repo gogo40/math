@@ -65,29 +65,36 @@ onde $u(n) = 1, \mbox{ para } n \geq 0$ e $u(n) = 0, \mbox{ para } n < 0$.
 Aplicando a transformada  $\mathcal{Z}$ em (\ref{simplificado}) e fazendo $ Y = \mathcal{Z} \{ F(n) \} $:
 
 $$
- z^2 \displaystyle \frac{d^2}{dz^2}Y - z \displaystyle \frac{d}{dz}Y = \mathcal{Z} \left\{ n^2  \right\} - 2 z  
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - 2z \displaystyle \frac{d}{dz}Y = \mathcal{Z} \left\{ n^2  \right\} - 2 z  
  \displaystyle \frac{d}{dz}Y \mathcal{Z} \left\{u(n)\right\}
 $$
 
 $$
 \begin{array}{lcl} 
- z^2 \displaystyle \frac{d^2}{dz^2}Y - z \displaystyle \frac{d}{dz}Y= \mathcal{Z} \left\{ n^2 \right\} - 2 z   
- \left( \displaystyle \frac{1}{1 - z^{-1}} \right) \displaystyle \frac{d}{dz}Y \\
- z^2 \displaystyle \frac{d^2}{dz^2}Y - z \displaystyle \frac{d}{dz}Y = \mathcal{Z} \left\{ n^2  \right\} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - 2z \displaystyle \frac{d}{dz}Y=\\ 
+ \mathcal{Z} \left\{ n^2 \right\} - 2 z \left( \displaystyle \frac{1}{1 - z^{-1}} \right) \displaystyle \frac{d}{dz}Y \\
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - 2z \displaystyle \frac{d}{dz}Y = \mathcal{Z} \left\{ n^2  \right\} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y
 \end{array}  
 $$
 
 $$
 \begin{array}{lcl} 
-z^2 \displaystyle \frac{d^2}{dz^2}Y = \frac{z^{-1} (1 + z^{-1})}{(1 - z^{-1})^3} + 
- \frac{z^{-1}}{(1 - z^{-1})^2} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
- z^2 \displaystyle \frac{d^2}{dz^2}Y = \frac{z^2 (1 + z^{-1})}{(z - 1)^3} + 
+z^2 \displaystyle \frac{d^2}{dz^2}Y - 2z \displaystyle \frac{d}{dz}Y =\\
+\displaystyle\frac{z^{-1} (1 + z^{-1})}{(1 - z^{-1})^3} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
+
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - 2z \displaystyle \frac{d}{dz}Y  = \\
+ \frac{z^2 (1 + z^{-1})}{(z - 1)^3} 
+ -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
+ 
+ 
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - 2z \displaystyle \frac{d}{dz}Y = \frac{z(z + 1)}{(z - 1)^3} + 
  \frac{z}{(z - 1)^2} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
- z^2 \displaystyle \frac{d^2}{dz^2}Y = \frac{z(z + 1)}{(z - 1)^3} + 
- \frac{z}{(z - 1)^2} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
+ 
  z^2 \displaystyle \frac{d^2}{dz^2}Y = \frac{z(z + 1)}{(z - 1)^3} + 
  \frac{z(z - 1)}{(z - 1)^3} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
+ 
  z^2 \displaystyle \frac{d^2}{dz^2}Y = \frac{2z^2}{(z - 1)^3} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y \\
+ 
  \displaystyle \frac{d^2}{dz^2}Y = \frac{2}{(z - 1)^3} -  \left( \displaystyle \frac{2}{z(z - 1)} \right) \displaystyle \frac{d}{dz}Y \\
 \end{array}  
 $$
