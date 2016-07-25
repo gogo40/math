@@ -171,7 +171,7 @@ Aplicando a transformada  inversa $\mathcal{Z}^{-1}$ na eq. (\ref{solucao.eq.dif
 
 $$
 \begin{array}{lcl} 
- x[n] = \\
+ F(n) = \\
  \mathcal{Z}^{-1}\left\{c_1z\right\} - 
  \mathcal{Z}^{-1}\left\{\displaystyle \frac{c_1}{z-1}\right\} + 
  \mathcal{Z}^{-1}\left\{c_2\right\}-\\
@@ -189,8 +189,8 @@ Simplificando:
 
 $$
 \begin{array}{lcl} 
- x[n] = \\
- \mathcal{Z}^{-1}\left\{\displaystyle \frac{c_1 - c_1z^{-1} - c_1z^{-2}}{1-z^{-2}}\right\} + \\
+ F(n) = \\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{c_1z - c_1 - c_1z^{-1}}{1-z^{-1}}\right\} + \\
  \mathcal{Z}^{-1}\left\{\displaystyle \frac{2  - 6z ^{-1}}{1-z^{-1}}\right\}+\\
  c_2 \delta(n)-\\
  \mathcal{Z}^{-1}\left\{4 Li_2(z)\right\}+\\
@@ -201,4 +201,39 @@ $$
 \end{array} 
 $$
 
+
+
+$$
+\begin{array}{lcl} 
+ F(n) = \\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{c_1z }{1-z^{-1}}\right\} +
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{- c_1}{1-z^{-1}}\right\} + 
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{- c_1z^{-1}}{1-z^{-1}}\right\} + \\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{2  - 6z ^{-1}}{1-z^{-1}}\right\}+\\
+ c_2 \delta(n)-\\
+ \mathcal{Z}^{-1}\left\{4 Li_2(z)\right\}+\\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{2 z^2 - 4z}{z-1}\displaystyle \left[\log(1-z) - \log(z)\right]\right\} +\\
+ \mathcal{Z}^{-1}\left\{4 \log(1-z)\log(z) \left[\displaystyle \frac{ z  + 1}{z-1}\right]\right\}+\\
+ \mathcal{Z}^{-1}\left\{2 \log^2(1-z)\right\} + \\
+ \mathcal{Z}^{-1}\left\{2 c_1  \log(1-z)\right\} 
+\end{array} 
+$$
+
+
+$$
+\begin{array}{lcl} 
+ F(n) = \\
+ \mathcal{Z}^{-1}\left\{c_1z\right\} *u[n] +
+ -c_1 u(n) - c_1 u(n-1) + \\
+ 2 u(n) -6 u(n-1) \\
+ c_2 \delta(n)-\\
+ \mathcal{Z}^{-1}\left\{4 Li_2(z)\right\}+\\
+ \mathcal{Z}^{-1}\left\{\displaystyle \frac{2 z^2 - 4z}{z-1}\right\} *
+ \mathcal{Z}^{-1}\left\{\displaystyle \left[\log(1-z) - \log(z)\right]\right\} +\\
+ 4\mathcal{Z}^{-1}\left\{\displaystyle \frac{ z  + 1}{z-1}\right\}*
+ \mathcal{Z}^{-1}\left\{ \log(1-z)\log(z) \right\}+\\
+ \mathcal{Z}^{-1}\left\{2 \log^2(1-z)\right\} + \\
+ \mathcal{Z}^{-1}\left\{2 c_1  \log(1-z)\right\} 
+\end{array} 
+$$
 \end{document}
