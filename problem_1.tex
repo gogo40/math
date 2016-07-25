@@ -21,7 +21,7 @@ F(n) & = & \displaystyle \frac{1} {n^2} \displaystyle
 \sum_{0 \leq k < n} \left[ 
 \displaystyle \sum_{0 \leq i < k} [1 + F(k)] +
 1 + 
-\displaystyle \sum_{k \leq i < n} [1 + F(n - 1 - k)]
+\displaystyle \sum_{k < i < n} [1 + F(n - 1 - k)]
 \right], \mbox{ para } n > 0
 \end{array}
 \label{problema}
@@ -37,13 +37,16 @@ Simplificando-se a eq. (\ref{problema}):
 
 \begin{equation}
 \begin{array}{lcl} 
- n^2 F(n) & = & n + \sum_{0 \leq k < n} [ k + k F(k)]  + 
-\sum_{0 \leq k < n} [ n - k + (n - k) F(n - 1 - k)] \\
+ n^2 F(n) & = & n + \sum_{0 \leq k < n} [ k + k F(k)]  + \\
+\sum_{0 \leq k < n} [ n - k - 1  + (n - k - 1) F(n - 1 - k)] \\
 n^2 F(n) & = & n + 
-\sum_{0 \leq k < n} [ k] + \sum_{0 \leq k < n}[k F(k)]  + 
-\sum_{0 \leq k < n} [ n - k] +\sum_{0 \leq k < n} [(n - k) F(n - 1 - k)] \\
-n^2 F(n) & = &  n + \sum_{0 \leq k < n} [n] + 2 \sum_{0 \leq k < n}[k F(k)] \\
-n^2 F(n) & = & (n^2 + n) + 2 \displaystyle \sum_{k \geq 0} k F(k) u(n - 1 - k)
+\sum_{0 \leq k < n} [ k] + \sum_{0 \leq k < n}[k F(k)]  + \\
+\sum_{0 \leq k < n} [ n - k - 1] +\\
+\sum_{0 \leq k < n} [(n - k- 1) F(n - 1 - k)] \\
+n^2 F(n) & = &  n + \sum_{0 \leq k < n} [n - 1] + 2 \sum_{0 \leq k < n}[k F(k)] \\
+n^2 F(n) + 2nF(n) & = &  n + \sum_{0 \leq k < n} [n - 1] + 2 \sum_{0 \leq k < n}[k F(k)] + 2nF(n)  \\
+n^2 F(n) + 2nF(n) & = &  n + \sum_{0 \leq k < n} [n - 1] + 2 \sum_{0 \leq k \leq n}[k F(k)]  \\
+n^2 F(n) + 2nF(n) & = & n^2 + 2 \displaystyle \sum_{k \geq 0} k F(k) u(n - k)
 \end{array}
 \end{equation}
 
@@ -52,7 +55,7 @@ obtém-se:
 
 
 \begin{equation}
-n^2 F(n)  =  (n^2 + n)  + 2 \left[ nF(n) \right] * \left[ u(n - 1) \right],
+n^2 F(n)  +2nF(n) =  n^2  + 2 \left[ nF(n) \right] * \left[ u(n) \right],
 \label{simplificado}
 \end{equation}
 
@@ -62,16 +65,15 @@ onde $u(n) = 1, \mbox{ para } n \geq 0$ e $u(n) = 0, \mbox{ para } n < 0$.
 Aplicando a transformada  $\mathcal{Z}$ em (\ref{simplificado}) e fazendo $ Y = \mathcal{Z} \{ F(n) \} $:
 
 $$
- z^2 \displaystyle \frac{d^2}{dz^2}Y = \mathcal{Z} \left\{ n^2 + n  \right\} - 2 z  
- \displaystyle \frac{d}{dz}Y \mathcal{Z} \left\{u(n-1)\right\}
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - z \displaystyle \frac{d}{dz}Y = \mathcal{Z} \left\{ n^2  \right\} - 2 z  
+ \displaystyle \frac{d}{dz}Y \mathcal{Z} \left\{u(n)\right\}
 $$
 
 $$
 \begin{array}{lcl} 
- z^2 \displaystyle \frac{d^2}{dz^2}Y = \mathcal{Z} \left\{ n^2 + n \right\} - 2 z   
- \left( \displaystyle \frac{z^{-1}}{1 - z^{-1}} \right) \displaystyle \frac{d}{dz}Y \\
- z^2 \displaystyle \frac{d^2}{dz^2}Y = \mathcal{Z} \left\{ n^2  \right\} + 
- \mathcal{Z} \left\{ n \right\} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - z \displaystyle \frac{d}{dz}Y= \mathcal{Z} \left\{ n^2 \right\} - 2 z   
+ \left( \displaystyle \frac{1}{1 - z^{-1}} \right) \displaystyle \frac{d}{dz}Y \\
+ z^2 \displaystyle \frac{d^2}{dz^2}Y - z \displaystyle \frac{d}{dz}Y = \mathcal{Z} \left\{ n^2  \right\} -  \left( \displaystyle \frac{2z}{z - 1} \right) \displaystyle \frac{d}{dz}Y
 \end{array}  
 $$
 
